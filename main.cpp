@@ -11,26 +11,36 @@ int main() {
 	cout << "012731511" << endl;
 	cout << "Levi Scott" << endl;
 	cout << " " << endl;
+
 	Roster classRoster;
 	classRoster.addExistingStudents();
 	cout << "Current Roster" << endl;
 	classRoster.printAll();
 	cout << " " << endl;
+
 	classRoster.printInvalidEmails();
 	cout << " " << endl;
+
 	cout << "Averages for days in course are:" << endl;
 	for (Student* student : classRoster.getStudents()) {
 		classRoster.printAverageDaysInCourse(student->GetStudentID());
 	}
 	cout << " " << endl;
+
 	cout << "Students in software program:" << endl;
 	classRoster.printByDegreeProgram(SOFTWARE);
 	cout << " " << endl;
-	classRoster.remove("A3");
-	cout << "roster after removal" << endl;;
-	classRoster.printAll();
+
+	cout << "removing A3" << endl;
 	cout << " " << endl;
 	classRoster.remove("A3");
+	classRoster.printAll();
+	cout << " " << endl;
+
+	cout << "removing A3" << endl;
+	cout << " " << endl;
+	classRoster.remove("A3");
+	cout << " " << endl;
 		
 
 	return 0;

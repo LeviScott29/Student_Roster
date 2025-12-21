@@ -5,45 +5,58 @@
 void Student::SetStudentID(std::string studentID) {
 	this->studentID = studentID;
 }
+
 void Student::SetFirstName(std::string firstName) {
 	this->firstName = firstName;
 }
+
 void Student::SetLastName(std::string lastName) {
 	this->lastName = lastName;
 }
+
 void Student::SetEmailAddress(std::string emailAddress) {
 	this->emailAddress = emailAddress;
 }
+
 void Student::SetAge(int age) {
 	this->age = age;
 }
+
 void Student::SetNumberOfDaysToCompleteEachCourseNumber(const int DaysToComplete[]) {
 	int i;
 	for (i = 0; i < 3; ++i) {
 		this->numberOfDaysToCompleteEachCourseNumber[i] = DaysToComplete[i];
 	}
 }
+
 std::string Student::GetStudentID() {
 	return studentID;
 }
+
 std::string Student::GetFirstName() {
 	return firstName;
 }
+
 std::string Student::GetLastName() {
 	return lastName;
 }
+
 std::string Student::GetEmailAddress() {
 	return emailAddress;
 }
+
 int Student::GetAge() const {
 	return age;
 }
+
 const int* Student::GetNumberOfDaysToCompleteEachCoursenumber() const {
 	return numberOfDaysToCompleteEachCourseNumber;
 }
+
 DegreeProgram Student::GetDegreeProgram() const {
 	return degreeProgram;
 }
+
 void Student::print() const {
 
 			std::cout << studentID << "    ";
@@ -69,6 +82,7 @@ void Student::print() const {
 				<< DegreeProgramToString(GetDegreeProgram())
 				<< std::endl;
 }
+
 Student::Student(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int DaysToComplete[], DegreeProgram degreeProgram)
 {
 	int i;

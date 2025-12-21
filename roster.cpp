@@ -17,7 +17,8 @@ const std::string Roster::studentData[5] = {
 
       "A5,Levi,Scott,angel.of.secrets8@gmail.com,37,28,52,36,SOFTWARE" };
 
- std::vector<std::string> Roster::split(const std::string& str) {
+//splits line of studentData array by comma
+ std::vector<std::string> Roster::split(const std::string& str) { 
     std::vector<std::string> tokens;
     std::string token;
     std::stringstream ss(str);
@@ -26,6 +27,7 @@ const std::string Roster::studentData[5] = {
     }
     return tokens;
 }
+ //parses array of words from split from StudentData and creates Student object
  Student Roster:: parseData(const std::string& line) {
      std::vector<std::string> parsedData = split(line);
      std::string studentID = parsedData[0];
@@ -49,22 +51,26 @@ const std::string Roster::studentData[5] = {
      }
      return Student(studentID, firstName, lastName, emailAddress, age, daysToComplete, dp);
  }
+ // adds all students from studentData array into classRosterArray vector
  void Roster::addExistingStudents() {
      for (const std::string& data : studentData) {
          Student student = parseData(data);
          classRosterArray.push_back(new Student(student));
      }
  }
+
  void Roster::printAll() {
      for (const Student* student : classRosterArray) {
          student->print();
      }
  }
+ // adds Student object to classRosterArray vector
  void Roster::add(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram) {
      int daysToComplete[3] = { daysInCourse1, daysInCourse2, daysInCourse3 };
      Student student(studentID, firstName, lastName, emailAddress, age, daysToComplete, degreeProgram);
      classRosterArray.push_back(new Student(student));
  }
+ // removes student from ClassRosterArray
  void Roster::remove(const std:: string& studentID) {
      bool isFound = false;
          for (auto i = classRosterArray.begin(); i != classRosterArray.end(); ++i) {
@@ -80,6 +86,7 @@ const std::string Roster::studentData[5] = {
              std::cout << "such a student with " << studentID << " was not found";
          }
      }
+ //retrives numberOfDaysToCompleteEachCourseNumber array and gets average of entries
  void Roster::printAverageDaysInCourse(std::string studentID) {
      int sum = 0;
      for (auto it = classRosterArray.begin(); it != classRosterArray.end(); ++it) {
@@ -89,10 +96,11 @@ const std::string Roster::studentData[5] = {
                      sum += numDays[i];
                  }
          
-                 std::cout << (*it)->GetFirstName() << " " << (*it)->GetLastName() << ": " << sum / 3 << std::endl;
+                 std::cout << (*it)->GetFirstName() << " " << (*it)->GetLastName() << ": " <<static_cast<double>(sum) / 3 << std::endl;
          }
      }
  }
+ //finds and returns students in classRosterArray matching desired degree program
  void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
      for (auto it = classRosterArray.begin(); it != classRosterArray.end(); ++it) {
          if ((*it)->GetDegreeProgram() == degreeProgram) {
@@ -100,6 +108,7 @@ const std::string Roster::studentData[5] = {
          }
      }
  }
+ //finds emails belonging to students in classRosterArray with invalid emails
  void Roster::printInvalidEmails() {
      std::cout << "The students with invalid emails in roster are:" << std::endl;
      for (auto it = classRosterArray.begin(); it != classRosterArray.end(); ++it) {
@@ -116,7 +125,7 @@ const std::string Roster::studentData[5] = {
  const std::vector<Student*>& Roster::getStudents() const {
      return classRosterArray;
  }
-
+ //deconstructor for vector of pointers
  Roster::~Roster() {
      for (Student* student : classRosterArray) {
          delete student;
