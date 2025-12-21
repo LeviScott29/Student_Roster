@@ -17,6 +17,8 @@ inline std::string DegreeProgramToString(DegreeProgram dp) {
         return "Network";
     case SOFTWARE:
         return "Software";
+    default:
+        return "Incorrect program:";
     }
 }
 

@@ -1,4 +1,3 @@
-
 #include <string>
 #include "student.h"
 #include "degree.h"
@@ -47,29 +46,28 @@ DegreeProgram Student::GetDegreeProgram() const {
 }
 void Student::print() const {
 
-	std::cout << studentID << "    ";
-	std::cout << "First Name: " << firstName << "    ";
-	std::cout << "Last Name: " << lastName << "    ";
-	std::cout << "Email: " << emailAddress << "    ";
-	std::cout << "Age: " << age << "    ";
+			std::cout << studentID << "    ";
+			std::cout << "First Name: " << firstName << "    ";
+			std::cout << "Last Name: " << lastName << "    ";
+			std::cout << "Email: " << emailAddress << "    ";
+			std::cout << "Age: " << age << "    ";
 
-	const int* days = numberOfDaysToCompleteEachCourseNumber;
-	std::cout << "daysInCourse: {";
-	for (int i = 0; i < 3; ++i) {
-		std::cout << days[i];
-		if (i < 4) {
-			std::cout << ", ";
-		}
-		else
-		{
-			std::cout << "}";
-		}
-	}
-	std::cout << "    ";
+			const int* days = numberOfDaysToCompleteEachCourseNumber;
+			std::cout << "daysInCourse: {";
+			for (int i = 0; i < 3; ++i) {
+				std::cout << days[i];
+				if (i < 2) {
+					std::cout << ", ";
+				}
+				else {
+					std::cout << "}";
+				}
+			}
+			std::cout << "    ";
 
-	std::cout << "Degree Program: "
-		<< DegreeProgramToString(GetDegreeProgram())
-		<< std::endl;
+			std::cout << "Degree Program: "
+				<< DegreeProgramToString(GetDegreeProgram())
+				<< std::endl;
 }
 Student::Student(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int DaysToComplete[], DegreeProgram degreeProgram)
 {
@@ -79,7 +77,7 @@ Student::Student(std::string studentID, std::string firstName, std::string lastN
 	this->lastName = lastName;
 	this->emailAddress = emailAddress;
 	this->age = age;
-	for (i = 0; i < 5; ++i) {
+	for (i = 0; i < 3; ++i) {
 		this->numberOfDaysToCompleteEachCourseNumber[i] = DaysToComplete[i];
 	}
 
