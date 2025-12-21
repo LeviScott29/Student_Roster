@@ -13,6 +13,7 @@ int main() {
 	cout << " " << endl;
 	Roster classRoster;
 	classRoster.addExistingStudents();
+	cout << "Current Roster" << endl;
 	classRoster.printAll();
 	cout << " " << endl;
 	classRoster.printInvalidEmails();
@@ -26,6 +27,7 @@ int main() {
 	classRoster.printByDegreeProgram(SOFTWARE);
 	cout << " " << endl;
 	classRoster.remove("A3");
+	cout << "roster after removal" << endl;;
 	classRoster.printAll();
 	cout << " " << endl;
 	classRoster.remove("A3");
