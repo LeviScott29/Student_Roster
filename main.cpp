@@ -25,10 +25,10 @@ int main() {
 	cout << "Students in software program:" << endl;
 	classRoster.printByDegreeProgram(SOFTWARE);
 	cout << " " << endl;
-	classRoster.Remove("A3");
+	classRoster.remove("A3");
 	classRoster.printAll();
 	cout << " " << endl;
-	classRoster.Remove("A3");
+	classRoster.remove("A3");
 		
 
 	return 0;

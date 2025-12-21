@@ -7,7 +7,6 @@
 #include "degree.h"
 class Roster {
 private:
-	DegreeProgram degreeProgram;
 	std::vector<Student*> classRosterArray;
 	static const std::string studentData[5];
 	std::vector<std::string> split(const std::string& str);
