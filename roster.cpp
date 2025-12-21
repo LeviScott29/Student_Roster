@@ -60,18 +60,24 @@ const std::string Roster::studentData[5] = {
          student->print();
      }
  }
- void Roster::Add(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram) {
+ void Roster::add(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram) {
      int daysToComplete[3] = { daysInCourse1, daysInCourse2, daysInCourse3 };
      Student student(studentID, firstName, lastName, emailAddress, age, daysToComplete, degreeProgram);
      classRosterArray.push_back(new Student(student));
  }
- void Roster::Remove(const std:: string& studentID) {
+ void Roster::remove(const std:: string& studentID) {
+     bool isFound = false;
          for (auto i = classRosterArray.begin(); i != classRosterArray.end(); ++i) {
              if ((*i)->GetStudentID() == studentID) {
                  delete *i;
                  classRosterArray.erase(i);
+                 isFound = true;
                  return;
              }
+            
+         }
+         if(isFound == false){
+             std::cout << "such a student with " << studentID << " was not found";
          }
      }
  void Roster::printAverageDaysInCourse(std::string studentID) {
@@ -82,7 +88,8 @@ const std::string Roster::studentData[5] = {
                  for (int i = 0; i < 3; ++i) {
                      sum += numDays[i];
                  }
-             std::cout << sum / 3;
+         
+                 std::cout << (*it)->GetFirstName() << " " << (*it)->GetLastName() << ": " << sum / 3 << std::endl;
          }
      }
  }
@@ -94,17 +101,22 @@ const std::string Roster::studentData[5] = {
      }
  }
  void Roster::printInvalidEmails() {
+     std::cout << "The students with invalid emails in roster are:" << std::endl;
      for (auto it = classRosterArray.begin(); it != classRosterArray.end(); ++it) {
          std::string email = (*it)->GetEmailAddress();
          char period = '.';
          char atSymbol = '@';
          if (email.find(period) ==std::string::npos || email.find(atSymbol) == std::string::npos || email.find(' ') != std::string::npos){
-             std::cout << email<<std::endl;
+             std::cout <<(*it)->GetFirstName()<< " " <<(*it)->GetLastName() <<": " << email << std::endl;
          
          }
 
      }
  }
+ const std::vector<Student*>& Roster::getStudents() const {
+     return classRosterArray;
+ }
+
  Roster::~Roster() {
      for (Student* student : classRosterArray) {
          delete student;

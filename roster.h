@@ -15,11 +15,12 @@ private:
 public:
 	void addExistingStudents();
 	void printAll();
-	void Add(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
-	void Remove(const std::string& studentID);
+	void add(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
+	void remove(const std::string& studentID);
 	void printAverageDaysInCourse(std::string studentID);
 	void printInvalidEmails();
 	void printByDegreeProgram(DegreeProgram degreeProgram);
+	const std::vector<Student*>& getStudents() const;
 	~Roster();
 };
 
