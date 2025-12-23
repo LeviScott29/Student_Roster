@@ -59,11 +59,11 @@ DegreeProgram Student::GetDegreeProgram() const {
 
 void Student::print() const {
 
-			std::cout << studentID << "    ";
-			std::cout << "First Name: " << firstName << "    ";
-			std::cout << "Last Name: " << lastName << "    ";
-			std::cout << "Email: " << emailAddress << "    ";
-			std::cout << "Age: " << age << "    ";
+			std::cout << studentID << "		";
+			std::cout << "First Name: " << firstName << "	";
+			std::cout << "Last Name: " << lastName << "		";
+			std::cout << "Email: " << emailAddress << "		";
+			std::cout << "Age: " << age << "	";
 
 			const int* days = numberOfDaysToCompleteEachCourseNumber;
 			std::cout << "daysInCourse: {";
@@ -73,10 +73,9 @@ void Student::print() const {
 					std::cout << ", ";
 				}
 				else {
-					std::cout << "}";
+					std::cout << "} ";
 				}
 			}
-			std::cout << "    ";
 
 			std::cout << "Degree Program: "
 				<< DegreeProgramToString(GetDegreeProgram())

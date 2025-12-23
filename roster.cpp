@@ -15,7 +15,7 @@ const std::string Roster::studentData[5] = {
 
       "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
 
-      "A5,Levi,Scott,angel.of.secrets8@gmail.com,37,28,52,36,SOFTWARE" };
+      "A5,Levi,Scott,angel.of.sec@gmail.com,37,28,52,36,SOFTWARE" };
 
 //splits line of studentData array by comma
  std::vector<std::string> Roster::split(const std::string& str) { 
