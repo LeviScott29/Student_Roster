@@ -59,10 +59,10 @@ DegreeProgram Student::GetDegreeProgram() const {
 
 void Student::print() const {
 
-			std::cout << studentID << "		";
+			std::cout << studentID << "	";
 			std::cout << "First Name: " << firstName << "	";
-			std::cout << "Last Name: " << lastName << "		";
-			std::cout << "Email: " << emailAddress << "		";
+			std::cout << "Last Name: " << lastName << "	";
+			std::cout << "Email: " << emailAddress << "	";
 			std::cout << "Age: " << age << "	";
 
 			const int* days = numberOfDaysToCompleteEachCourseNumber;
