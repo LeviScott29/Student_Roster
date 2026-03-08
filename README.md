@@ -12,7 +12,7 @@ This project demonstrates core **object-oriented programming principles in C++**
 - Data validation
 - Basic algorithmic processing
 
-The application was built as part of coursework for **C867 – Scripting and Programming Applications**.
+The application was built as the final for **C867 – Scripting and Programming Applications**.
 
 ---
 
@@ -91,52 +91,6 @@ SOFTWARE
 
 
 Used to categorize students and filter results.
-
----
-
-# Program Workflow
-
-When the program runs:
-
-1. Displays course and author information
-2. Loads predefined student data
-3. Prints the full roster
-4. Identifies invalid email addresses
-5. Calculates average course completion time
-6. Prints students in the **Software** degree program
-7. Demonstrates student removal functionality
-
-Example section from execution:
-StudentID: A1, Name: John Smith, Email: john@example.com, Age: 20
-Days in Course: {30, 35, 40} Degree: SECURITY
-
-
----
-
-# Example Output
-
-The program prints:
-
-- Full student roster
-- Invalid emails
-- Average days per student
-- Students filtered by degree program
-- Demonstration of removing a student
-
----
-
-# Concepts Demonstrated
-
-This project demonstrates several core C++ programming concepts:
-
-- Object-oriented design
-- Dynamic memory allocation
-- Pointer usage
-- Vectors and arrays
-- String parsing
-- Enumeration types
-- Basic data validation
-- Class collaboration
 
 ---
 
