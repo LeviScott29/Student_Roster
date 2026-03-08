@@ -30,6 +30,7 @@ The application was built as part of coursework for **C867 – Scripting and Pro
 ---
 
 # Project Structure
+```
 class-final/
 │
 ├── main.cpp # Program entry point
@@ -39,7 +40,7 @@ class-final/
 ├── roster.cpp # Roster class implementation
 ├── degree.h # Degree program enum definition
 └── README.md # Project documentation
-
+```
 ---
 
 # Program Overview
